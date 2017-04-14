@@ -24,41 +24,41 @@ void pop(NODEPTR*, int*, int*);
 /* main */
 int main(void)
 {
-	NODEPTR stack = NULL; /* initialising stack to empty state */
+    NODEPTR stack = NULL; /* initialising stack to empty state */
     int underflow, overflow, popped, choice, x;
-	do
-	{
+    do
+    {
 		printf("\n----------- MENU -------------\n");
-        printf("\n 1. PUSH    2. POP    3. EXIT\n");
-        printf("\n------------------------------\n");
-        printf("\nEnter your choice (1 / 2 / 3): ");
-        scanf("%d", &choice);
+        	printf("\n 1. PUSH    2. POP    3. EXIT\n");
+       	        printf("\n------------------------------\n");
+                printf("\nEnter your choice (1 / 2 / 3): ");
+                scanf("%d", &choice);
 		switch(choice)
 		{
 			case 1: 	printf("\nEnter the element to push: ");
-						scanf("%d", &x);
-						push(&stack, x, &overflow); /* function call to push */
-						if(overflow) /*check for overflow*/
-						   printf("\nOverflow.\n");
-						else
-						   printf("\n%d was pushed successfully to stack.\n", x);
-						break;
+					scanf("%d", &x);
+					push(&stack, x, &overflow); /* function call to push */
+					if(overflow) /*check for overflow*/
+				        	printf("\nOverflow.\n");
+					else
+						printf("\n%d was pushed successfully to stack.\n", x);
+					break;
 					
 			case 2: 	pop(&stack, &underflow, &popped);/* function call to pop */
-						if(underflow) /*check for underflow*/
-						   printf ("\nUnderflow.\n");
-						else
-						   printf("\nPopped element is %d.\n", popped);
-						break;
+					if(underflow) /*check for underflow*/
+						printf ("\nUnderflow.\n");
+					else
+						printf("\nPopped element is %d.\n", popped);
+					break;
 					
 			case 3: 	printf("\nExiting program...\n");
 						break;
 			
 			default:	printf("\nInvalid choice. Try again.\n");
 		}
-	} while(choice != 3);
-	getch();
-	return 0;
+    } while(choice != 3);
+    getch();
+    return 0;
 } /* end of main */
 
 /* function to push an element into the stack */
