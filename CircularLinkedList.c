@@ -27,7 +27,7 @@ void concatList(NODEPTR*, NODEPTR*);
 /* main */
 int main(void)
 {
-	NODEPTR list, secondList;
+    NODEPTR list, secondList;
     int choice, item, x;
     printf("Create a list.\n\n");
     createList(&list);
@@ -46,45 +46,45 @@ int main(void)
                       switch(choice)
                       {
                       	case 1:		printf("\nEnter the item to be inserted: ");
-     								scanf("%d", &item);
-     								printf("\nEnter the value of the element after which you want to enter %d: ", item);
-     								scanf("%d", &x);
-     								insertAfterx(&list, list, x, item);
-                                    break;
+     					scanf("%d", &item);
+     					printf("\nEnter the value of the element after which you want to enter %d: ", item);
+     					scanf("%d", &x);
+     					insertAfterx(&list, list, x, item);
+                                    	break;
                                     
                         case 2:		printf("\nEnter the element to be deleted: ");
-                                    scanf("%d", &item);
-                                    deleteNodex(&list, item);
-                                    break;
+                                    	scanf("%d", &item);
+                                    	deleteNodex(&list, item);
+                                    	break;
 
-                        case 3:     printf("\nThe list contains: ");
-									displayList(list);
-									printf("\n");
-                                    break;
+                        case 3:     	printf("\nThe list contains: ");
+					displayList(list);
+					printf("\n");
+                                    	break;
                                                 
-                        case 4:     printf("\n\nThe number of elements in the list is: %d\n", countNode(list));
-                                    break;
+                        case 4:     	printf("\n\nThe number of elements in the list is: %d\n", countNode(list));
+                                    	break;
                                     
-                        case 5:     printf("\n\nCreate another list.\n");
-                                    createList(&secondList);
-                                    concatList(&list, &secondList);
-                                    break;
+                        case 5:     	printf("\n\nCreate another list.\n");
+                                    	createList(&secondList);
+                                    	concatList(&list, &secondList);
+                                    	break;
                                                 
-                        case 6:     printf("\nExiting program...\n");
-									exit(0);
+                        case 6:     	printf("\nExiting program...\n");
+					exit(0);
                                     
-                        default:    printf("\nInvalid choice!\n");
+                        default:    	printf("\nInvalid choice!\n");
                     }
     } while(choice != 6);
     getch();
-	return 0;
+    return 0;
 } /* end of main */
 
 /* function to create a list */
 void createList(NODEPTR *plist)
 {
      *plist = NULL; /* initialising list to empty state */
-	 NODEPTR newNode, lastNode;
+     NODEPTR newNode, lastNode;
      int x;
      char choice;
      do
@@ -168,10 +168,10 @@ void deleteNodex(NODEPTR *plist, int x)
      	{
      		flag = 1;
          	p = p -> next;
-			deleteAfter(prevNode, plist);
-			if(*plist == prevNode)
-				return;
-			continue;
+		deleteAfter(prevNode, plist);
+		if(*plist == prevNode)
+			return;
+		continue;
         }
         prevNode = p;
         p = p -> next;
