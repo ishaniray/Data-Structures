@@ -25,34 +25,34 @@ void dequeue(NODEPTR*, int*, int*);
 int main(void)
 {
 	NODEPTR queue = NULL; /* initialising queue to empty state */
-    int underflow, overflow, dequeued, choice, x;
+    	int underflow, overflow, dequeued, choice, x;
 	do
 	{
 		printf("\n----------- MENU -------------\n");
-        printf("\n 1. ENQUEUE    2. DEQUEUE    3. EXIT\n");
-        printf("\n------------------------------\n");
-        printf("\nEnter your choice (1 / 2 / 3): ");
-        scanf("%d", &choice);
+        	printf("\n 1. ENQUEUE    2. DEQUEUE    3. EXIT\n");
+        	printf("\n------------------------------\n");
+        	printf("\nEnter your choice (1 / 2 / 3): ");
+        	scanf("%d", &choice);
 		switch(choice)
 		{
 			case 1: 	printf("\nEnter the element to enqueue: ");
-						scanf("%d", &x);
-						enqueue(&queue, x, &overflow); /* function call to enqueue */
-						if(overflow) /*check for overflow*/
-					   		printf("\nOverflow.\n");
-						else
-					  	 	printf("\n%d was enqueued successfully to queue.\n", x);
-						break;
+					scanf("%d", &x);
+					enqueue(&queue, x, &overflow); /* function call to enqueue */
+					if(overflow) /*check for overflow*/
+						printf("\nOverflow.\n");
+					else
+					  	printf("\n%d was enqueued successfully to queue.\n", x);
+					break;
 					
 			case 2: 	dequeue(&queue, &dequeued, &underflow); /* function call to dequeue */
-						if(underflow) /* check for underflow */
-						   printf ("\nUnderflow.\n");
-						else
-					   		printf("\nDequeued element is %d.\n", dequeued);
-						break;
+					if(underflow) /* check for underflow */
+						printf ("\nUnderflow.\n");
+					else
+					   	printf("\nDequeued element is %d.\n", dequeued);
+					break;
 					
 			case 3: 	printf("\nExiting program...\n");
-						break;
+					break;
 			
 			default:	printf("\nInvalid choice. Try again.\n");
 		}
