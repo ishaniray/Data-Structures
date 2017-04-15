@@ -75,7 +75,7 @@ int main(void)
 void createList(NODEPTRDLL *plist)
 {
      *plist = NULL; /* initialising list to empty state */
-	 NODEPTRDLL newNode, lastNode = *plist;
+     NODEPTRDLL newNode, lastNode = *plist;
      int x;
      char choice;
      do
@@ -204,7 +204,3 @@ int countNode(NODEPTRDLL p)
          count++;
     return count;
 }
-
-
-
-
